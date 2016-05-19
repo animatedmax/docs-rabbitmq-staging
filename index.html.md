@@ -13,11 +13,11 @@ The [Pivotal Cloud Foundry&reg;](https://network.pivotal.io/products/pivotal-cf)
 
 <dl>
 <dt>Current RabbitMQ for PCF Details</dt>
-<dd><strong>Version</strong>: 1.5.8 </dd>
-<dd><strong>Release Date</strong>: 16th March 2016</dd>
+<dd><strong>Version</strong>: 1.5.10 </dd>
+<dd><strong>Release Date</strong>: 18th May 2016</dd>
 <dd><strong>Software component version</strong>: RabbitMQ OSS 3.5.7</dd>
-<dd><strong>Compatible Ops Manager Version(s)</strong>: 1.6.x, 1.5.x, 1.4.x</dd>
-<dd><strong>Compatible Elastic Runtime Version(s)</strong>: 1.6.x, 1.5.x, 1.4.x</dd>
+<dd><strong>Compatible Ops Manager Version(s)</strong>: 1.7.x, 1.6.x, 1.5.x, 1.4.x</dd>
+<dd><strong>Compatible Elastic Runtime Version(s)</strong>: 1.7.x, 1.6.x, 1.5.x, 1.4.x</dd>
 <dd><strong>vSphere support?</strong> Yes</dd>
 <dd><strong>AWS support?</strong> Yes</dd>
 <dd><strong>OpenStack support?</strong> Yes</dd>
@@ -29,7 +29,9 @@ Consider the following compatibility information before upgrading RabbitMQ for P
 
 <p class="note"><strong>Note</strong>: Before you upgrade to Ops Manager 1.4.x, you must first upgrade RabbitMQ for PCF to at least 1.3.4. This allows RabbitMQ for PCF upgrades after you install OpsManager 1.4.x. </p>
 
-For more information, refer to the full [Product Version Matrix](../compatibility-matrix.pdf).
+<p class="note"><strong>Note</strong>: Only version 1.5.9 and above are certified to work in new installations of Ops Manager 1.7.x. </p>
+
+For more information, refer to the full [Product Version Matrix](http://docs.pivotal.io/compatibility-matrix.pdf).
 
 <table border="1" class="nice">
 <tr>
@@ -56,25 +58,34 @@ For more information, refer to the full [Product Version Matrix](../compatibilit
       <li>From 1.3.4 to 1.4.0, 1.4.1, 1.4.2, 1.4.3, 1.4.4, 1.4.5, 1.4.6, 1.4.7, 1.4.8, 1.4.9, 1.4.10</li>
       <li>From 1.3.5 to 1.4.0, 1.4.1, 1.4.2, 1.4.3, 1.4.4, 1.4.5, 1.4.6, 1.4.7, 1.4.8, 1.4.9, 1.4.10</li>
       <li>From 1.3.6 to 1.4.0, 1.4.1, 1.4.2, 1.4.3, 1.4.4, 1.4.5, 1.4.6, 1.4.7, 1.4.8, 1.4.9, 1.4.10</li>
-      <li>From 1.4.0 to 1.4.1, 1.4.2, 1.4.3, 1.4.4, 1.4.5, 1.4.6, 1.4.7, 1.4.8, 1.4.9, 1.4.10, 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8</li>
-      <li>From 1.4.1 to 1.4.2, 1.4.3, 1.4.4, 1.4.5, 1.4.6, 1.4.7, 1.4.8, 1.4.9, 1.4.10, 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8</li>
-      <li>From 1.4.2 to 1.4.3, 1.4.4, 1.4.5, 1.4.6, 1.4.7, 1.4.8, 1.4.9, 1.4.10, 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8</li>
-      <li>From 1.4.3 to 1.4.4, 1.4.5, 1.4.6, 1.4.7, 1.4.8, 1.4.9, 1.4.10, 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8</li>
-      <li>From 1.4.4 to 1.4.5, 1.4.6, 1.4.7, 1.4.8, 1.4.9, 1.4.10, 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8</li>
-      <li>From 1.4.5 to 1.4.6, 1.4.7, 1.4.8, 1.4.9, 1.4.10, 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8</li>
-      <li>From 1.4.6 to 1.4.7, 1.4.8, 1.4.9, 1.4.10, 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8</li>
-      <li>From 1.4.7 to 1.4.8, 1.4.9, 1.4.10, 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8</li>
-      <li>From 1.4.8 to 1.4.9, 1.4.10, 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8</li>
-      <li>From 1.4.9 to 1.4.10, 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8</li>
-      <li>From 1.4.10 to 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8</li>
-      <li>From 1.5.0 to 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8</li>
-      <li>From 1.5.1 to 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8</li>
-      <li>From 1.5.2 to 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8</li>
-      <li>From 1.5.3 to 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8</li>
-      <li>From 1.5.4 to 1.5.5, 1.5.6, 1.5.7, 1.5.8</li>
-      <li>From 1.5.5 to 1.5.6, 1.5.7, 1.5.8</li>
-      <li>From 1.5.6 to 1.5.7, 1.5.8</li>
-      <li>From 1.5.7 to 1.5.8</li>
+      <li>From 1.4.0 to 1.4.1, 1.4.2, 1.4.3, 1.4.4, 1.4.5, 1.4.6, 1.4.7, 1.4.8, 1.4.9, 1.4.10, 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8, 1.5.9, 1.5.10</li>
+      <li>From 1.4.1 to 1.4.2, 1.4.3, 1.4.4, 1.4.5, 1.4.6, 1.4.7, 1.4.8, 1.4.9, 1.4.10, 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8, 1.5.9, 1.5.10</li>
+      <li>From 1.4.2 to 1.4.3, 1.4.4, 1.4.5, 1.4.6, 1.4.7, 1.4.8, 1.4.9, 1.4.10, 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8, 1.5.9, 1.5.10</li>
+      <li>From 1.4.3 to 1.4.4, 1.4.5, 1.4.6, 1.4.7, 1.4.8, 1.4.9, 1.4.10, 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8, 1.5.9, 1.5.10</li>
+      <li>From 1.4.4 to 1.4.5, 1.4.6, 1.4.7, 1.4.8, 1.4.9, 1.4.10, 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8, 1.5.9, 1.5.10</li>
+      <li>From 1.4.5 to 1.4.6, 1.4.7, 1.4.8, 1.4.9, 1.4.10, 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8, 1.5.9, 1.5.10</li>
+      <li>From 1.4.6 to 1.4.7, 1.4.8, 1.4.9, 1.4.10, 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8, 1.5.9, 1.5.10</li>
+      <li>From 1.4.7 to 1.4.8, 1.4.9, 1.4.10, 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8, 1.5.9, 1.5.10</li>
+      <li>From 1.4.8 to 1.4.9, 1.4.10, 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8, 1.5.9, 1.5.10</li>
+      <li>From 1.4.9 to 1.4.10, 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8, 1.5.9, 1.5.10</li>
+      <li>From 1.4.10 to 1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8, 1.5.9, 1.5.10</li>
+      <li>From 1.5.0 to 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8, 1.5.9, 1.5.10</li>
+      <li>From 1.5.1 to 1.5.2, 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8, 1.5.9, 1.5.10</li>
+      <li>From 1.5.2 to 1.5.3, 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8, 1.5.9, 1.5.10</li>
+      <li>From 1.5.3 to 1.5.4, 1.5.5, 1.5.6, 1.5.7, 1.5.8, 1.5.9, 1.5.10</li>
+      <li>From 1.5.4 to 1.5.5, 1.5.6, 1.5.7, 1.5.8, 1.5.9, 1.5.10</li>
+      <li>From 1.5.5 to 1.5.6, 1.5.7, 1.5.8, 1.5.9, 1.5.10</li>
+      <li>From 1.5.6 to 1.5.7, 1.5.8, 1.5.9, 1.5.10</li>
+      <li>From 1.5.7 to 1.5.8, 1.5.9, 1.5.10</li>
+      <li>From 1.5.8 to 1.5.9, 1.5.10</li>
+      <li>From 1.5.9 to 1.5.10</li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <th>1.7.x</th>
+  <td><ul>
+      <li>From 1.5.9 to 1.5.10</li>
     </ul>
   </td>
 </tr>
