@@ -30,6 +30,16 @@ This removes the HAProxy SPOF and provides further redundancy.
 
 In the above diagram, you can see that you can now suffer the failure of a single HAProxy and single RabbitMQ node and still keep your cluster online and applications connected.
 
+### Multiple Subnets
+
+RabbitMQ supports deployment over multiple subnets in a multiple AZ configuration.
+You can read more about setting up a multiple AZ configuration with multiple subnets
+in the [OpsManager documentation](/partners/preparing-ops-man.html#access-ops-man).
+
+Once you've set up OpsManager with multiple subnets, you can select multiple AZs on the
+"Assign AZs and Networks" page. Your RabbitMQ will then be deployed across multiple AZs in different
+networks by OpsManager.
+
 ### Upgrading to this deployment from a single AZ deployment
 
 It is **not** possible to upgrade to this setup from the default deployment across a single AZ.
