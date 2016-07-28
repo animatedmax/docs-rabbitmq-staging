@@ -1,13 +1,13 @@
 ---
-breadcrumb: RabbitMQ for Pivotal Cloud Foundry&reg; Documentation
-title: RabbitMQ for Pivotal Cloud Foundry&reg; Documentation
+breadcrumb: RabbitMQ for Pivotal Cloud Foundry Documentation
+title: RabbitMQ&reg; for Pivotal Cloud Foundry Documentation
 owner: London Services
 ---
 
 RabbitMQ is a fast and dependable open-source message server that supports a wide range of use cases including reliable integration, content based routing and global data delivery, and high volume monitoring and data ingestion.
 
 Emerging as the de facto standard for cloud messaging, RabbitMQ is used for efficient communication between servers, applications and devices, and creates lasting value by enabling rapid development of modern decentralized application and data architectures that can scale with your business needs.
-The [Pivotal Cloud Foundry&reg;](https://network.pivotal.io/products/pivotal-cf) (PCF) installer enables cloud operators to deploy a [RabbitMQ service](https://network.pivotal.io/products/pivotal-rabbitmq-service) in PCF. You can deploy the service as a single node or a cluster.
+The [Pivotal Cloud Foundry](https://network.pivotal.io/products/pivotal-cf) (PCF) installer enables cloud operators to deploy a [RabbitMQ service](https://network.pivotal.io/products/pivotal-rabbitmq-service) in PCF. You can deploy the service as a single node or a cluster.
 
 ## Product snapshot
 
@@ -25,7 +25,7 @@ The [Pivotal Cloud Foundry&reg;](https://network.pivotal.io/products/pivotal-cf)
 
 ## Upgrading to the Latest Version
 
-Consider the following compatibility information before upgrading RabbitMQ for Pivotal Cloud Foundry&reg;.
+Consider the following compatibility information before upgrading RabbitMQ for Pivotal Cloud Foundry.
 
 <p class="note"><strong>Note</strong>: Before you upgrade to Ops Manager 1.4.x, you must first upgrade RabbitMQ for PCF to at least 1.3.4. This allows RabbitMQ for PCF upgrades after you install OpsManager 1.4.x. </p>
 
@@ -142,4 +142,4 @@ We hope to address all of these limitations in future releases.
 * In the `1.5.0, 1.5.1, 1.5.2, 1.5.3` releases, when performing a fresh installation or upgrade, if you have the rabbitmq\_jsonrpc\_channel or rabbitmq\_jsonrpc\_channel_examples plugins selected then the RabbitMQ nodes will fail to start. The plugins are no longer distributed with RabbitMQ and plugin validation was introduced in RabbitMQ `3.5.7`, causing the nodes to fail to start. To resolve this issue you should install/upgrade to version `1.5.4` or above of the tile.
 
 ### Feedback
-Please provide any bugs, feature requests, or questions to [the Pivotal Cloud Foundry&reg; Feedback list](mailto:pivotal-cf-feedback@pivotal.io).
+Please provide any bugs, feature requests, or questions to [the Pivotal Cloud Foundry Feedback list](mailto:pivotal-cf-feedback@pivotal.io).

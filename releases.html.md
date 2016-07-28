@@ -1,9 +1,9 @@
 ---
-title: RabbitMQ for Pivotal Cloud Foundry&reg;
+title: RabbitMQ for Pivotal Cloud Foundry
 owner: London Services
 ---
 
-Release notes for [RabbitMQ for Pivotal Cloud Foundry&reg;](https://network.pivotal.io/products/pivotal-rabbitmq-service)
+Release notes for [RabbitMQ&reg; for Pivotal Cloud Foundry](https://network.pivotal.io/products/pivotal-rabbitmq-service)
 ### 1.5.10
 **Release Date: 18th May 2016**
 

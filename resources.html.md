@@ -1,5 +1,5 @@
 ---
-title: RabbitMQ for Pivotal Cloud Foundry&reg; Documentation
+title: RabbitMQ&reg; for Pivotal Cloud Foundry Documentation
 owner: London Services
 ---
 
