@@ -15,7 +15,7 @@ In RabbitMQ for Pivotal Cloud Foundry&reg;(PCF) 1.6.0 and above, you can designa
 1. Click **Save**.
 1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to redeploy with the changes.
 
-A correctly configured system emits metrics for all RabbitMQ and HAproxy nodes deployed in the service. You can identify logs from individual nodes by their index, which corresponds to the index of the RabbitMQ nodes displayed in Ops Manager:
+A correctly configured system emits metrics for all RabbitMQ and HAProxy nodes deployed in the service. You can identify logs from individual nodes by their index, which corresponds to the index of the RabbitMQ nodes displayed in Ops Manager:
 
 * The logs for RabbitMQ server nodes follow the format <code>[job=rabbitmq-server-partition-GUID index=X]</code>
 * The logs for HAproxy nodes follow the format <code>[job=rabbitmq-haproxy-partition-GUID index=X]</code>
@@ -25,7 +25,7 @@ RabbitMQ and HAproxy servers are configured to log at the <code>info</code> leve
 
 ## <a id="heartbeats"></a>Heartbeats
 
-In RabbitMQ for PCF 1.6 and above, the key system components periodically emit heartbeats for RabbitMQ server nodes, HAproxy nodes, and the Service Broker. The heartbeats are Boolean metrics: <code>1</code> means the system is available, and <code>0</code> or the absence of a heartbeat metric means the service is not responding and should be investigated.
+In RabbitMQ for PCF 1.6 and above, the key system components periodically emit heartbeats for RabbitMQ server nodes, HAProxy nodes, and the Service Broker. The heartbeats are Boolean metrics: <code>1</code> means the system is available, and <code>0</code> or the absence of a heartbeat metric means the service is not responding and should be investigated.
 
 The heartbeats are visible on the firehose and look as follows:
 
@@ -156,7 +156,7 @@ The table below shows the current list of RabbitMQ metrics emitted and their des
 
 ###<a id="haproxy-metrics"></a>HAProxy Metrics
 
-The table below shows the current list of HAproxy metrics emitted and their description.
+The table below shows the current list of HAProxy metrics emitted and their description.
 
 <p class="note"><strong>Note</strong>: The name space for the metrics follows the format <code>/CF-SERVICE-NAME/NODE-TYPE/METRIC-NAME</code>.</p>
 
