@@ -20,7 +20,7 @@ RabbitMQ and HAproxy servers are configured to log at the <code>info</code> leve
 
 # Heartbeats
 
-In RabbitMQ for PCF 1.6 and above the key system components are configured to peridocially emit heartbeats for RabbitMQ server nodes, HAproxy nodes and the Service Broker. They are boolian metrics with <code>1</code> meaning the system is available.  A <code>0</code> or an absence of a heartbeat metric will mean an expect service is not responseing and should be investigated.  The heartbeats will be visible on the firehose and will look as follows:
+In RabbitMQ for PCF 1.6 and above the key system components are configured to periodically emit heartbeats for RabbitMQ server nodes, HAproxy nodes and the Service Broker. They are boolean metrics with <code>1</code> meaning the system is available.  A <code>0</code> or an absence of a heartbeat metric will mean an expect service is not responseing and should be investigated.  The heartbeats will be visible on the firehose and will look as follows:
 - HAproxy heartbeat: <code> "/p-rabbitmq/haproxy/heartbeat" value:1 unit:"boolean" </code>
 - RabbitMQ heartbeat: <code> "/p-rabbitmq/rabbitmq/heartbeat" value:1 unit:"boolean" </code>
 - Service Broker heartbeat: <code> "/p-rabbitmq/service_broker/heartbeat" value:1 unit:"boolean" </code>
@@ -31,7 +31,7 @@ RabbitMQ and HAproxy metrics have been exposed via the Cloud Foundry Firehose an
 
 <%= image_tag("images/metrics_polling.jpeg") %>
 
-The format of the emmitted metrics is as per the example below:
+The format of the emitted metrics is as per the example below:
 
 <code>origin:"p-rabbitmq" eventType:ValueMetric timestamp:1441188462382091652 deployment:"cf-rabbitmq" job:"cf-rabbitmq-node" index:"0" ip:"10.244.3.46" valueMetric: < name:"/p-rabbitmq/rabbitmq/system/memory" value:1024 unit:"MB"></code>
 
