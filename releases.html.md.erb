@@ -5,7 +5,21 @@ owner: London Services
 
 Release notes for [RabbitMQ for Pivotal Cloud Foundry](https://network.pivotal.io/products/pivotal-rabbitmq-service)
 
-### 1.6.7
+### 1.6.9
+**Release Date: 13th October 2016**
+
+Features included in this release:
+
+* INstalling this release will require the RabbitMQ cluster to be taken offline during the deployment
+* Using stemcell 3233.2
+* OSS RabbitMQ 3.6.5 and Erlang 18.1 is included
+* HAproxy v1.6.9
+* Golang 1.6.3
+* JRE 1.8.102
+* Fixed issue with SSL configuration options in Operations Manager swapping the 'Enable verify_peer SSL certificate verification' option and 'Require peer certificate validation' option.  Existing settings will be migrated with no input from operators.
+
+
+### 1.6.8
 **Release Date: 10th October 2016**
 
 Features included in this release:
@@ -15,7 +29,7 @@ Features included in this release:
 * HAproxy v1.6.9
 * Golang 1.6.3
 * JRE 1.8.102
-* Updated loggregator release 
+* Fixed issue with SSL configuration options in Operations Manager swapping the 'Enable verify_peer SSL certificate verification' option and 'Require peer certificate validation' option.  Existing settings will be migrated with no input from operators.
 
 ### 1.6.7
 **Release Date: th October 2016**
@@ -26,7 +40,7 @@ Features included in this release:
 * Customers upgrading from versions below 1.6.4 should expect the RabbitMQ cluster to be taken offline while the new RabbitMQ package is applied
 * Customers should read the accompanying 'Updating RabbitMQ for PCF from v1.6.x to v1.6.8 section
 * Dependencies updated: HAproxy (1.6.9), Golang (1.6.3), JRE 1.8.102
-* OSS RabbitMQ 3.6.5 & Erlang 18.3
+* OSS RabbitMQ 3.6.5 & Erlang 18.1
 * Fixed issue with SSL configuration options in Operations Manager swapping the 'Enable verify_peer SSL certificate verification' option and 'Require peer certificate validation' option.  Existing settings will be migrated with no input from operators.
 
 ### 1.6.6
