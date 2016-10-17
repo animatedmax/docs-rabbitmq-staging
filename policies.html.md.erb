@@ -6,17 +6,17 @@ owner: London Services
 
 # RabbitMQ Policy
 
-The configuration box shown below can be used by Operators to set a defult queue and/or exchange policy to be applied to their RabbitMQ cluster.  It is advised that after deployment all configuration is done via the RabbitMQ Management Interface.
+The configuration box shown below can be used by Operators to set a default queue and/or exchange policy to be applied to their RabbitMQ cluster.  It is advised that after deployment all configuration is done via the RabbitMQ Management Interface.
 
-An example policy is provided in the confguration box, but it is not enabled or applied and is intended only as a guide.  Operators should consider some of the performance implications of making queuss and exchanges highly available, and refer to the following documenation for more information: https://www.rabbitmq.com/ha.html
+An example policy is provided in the configuration box, but it is not enabled or applied and is intended only as a guide.  Operators should consider some of the performance implications of making queues and exchanges highly available, and refer to the following documentation for more information: https://www.rabbitmq.com/ha.html
 
-The following rules apply to polices set via this confguration box:
+The following rules apply to polices set via this configuration box:
 
 * The policy is only applied to new instances
 * Any existing instances will not have the policy applied
 * The policy can be updated in OpsManager and this will only be applied to any new instances created there after
 * The policy can only be deleted manually from the RabbitMQ nodes
-* Polcies can be added dynamically using the RabbitMQ Managemnt Interface
+* Policies can be added dynamically using the RabbitMQ Management Interface
 
 ## Viewing or changing the policy
 In OpsManager on the RabbitMQ tile, there is a left hand menu item called `RabbitMQ Policy`  The checkbox is not enabled by default and so no policy will be applied.
@@ -42,4 +42,4 @@ You can see any new queues created have the policy automatically applied.
 
 It is possible to change how you would want RabbitMQ to act once it discovers there has been a network partition.  The two options are `pause_minority` and `autoheal`, and more detail on these settings can be found here: https://www.rabbitmq.com/partitions.html
 
-You must set the choose the option you want before deploying, or the default `pause_minority` will be used.  For production purposes we recomend that customers have at least 3 RabbitMQ server nodes and 2 HAproxy spread across low latency availability zones. 
+You must set the choose the option you want before deploying, or the default `pause_minority` will be used.  For production purposes we recommend that customers have at least three RabbitMQ server nodes and two HAProxy spread across low latency availability zones. 
