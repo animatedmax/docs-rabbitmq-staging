@@ -1,0 +1,31 @@
+---
+breadcrumb: RabbitMQ for Pivotal Cloud Foundry Documentation
+title: Configuring and Managing Dedicated RabbitMQ Instances - Experimental
+owner: London Services
+---
+
+## What are dedicated instances and when to use them with RabbitMQ (link to ODB Documentation)
+Right now (for PCF RabbitMQ versions before 1.8.0), the RabbitMQ Service
+instances correspond to a unique RabbitMQ Vhost on the multi-tenant RabbitMQ
+cluster. In PCF RabbitMQ 1.8.0, we are introducing [On-Demand Broker
+(ODB)](/on-demand-service-broker/index.html) support (experimental). That means
+that a new cluster can be created and decicated to a single application
+(single-tenant).
+
+## Resource considerations
+
+## Tile configurations
+### Configuration options
+### Enabling the on demand service broker
+### Explanation of resource types and requirements
+### Enabling and monitoring servcie instance quotas
+### Detail of the solo plan (resources required)
+### Syslog configuration (shared with multi-tenant) and example of log output with deployment name as a tag
+### Explanation of the smoke test errand
+
+## How to upgrade dedicated instances
+### Stemcell deployments
+### RabbitMQ updates
+
+## How to provision a dedicated instance as an App Developer
+
