@@ -5,11 +5,53 @@ owner: London Services
 
 # Upgrades
 
-This product enables a seamless upgrade experience between versions of the product that is deployed through Ops Manager.
+This product enables automated upgrades between versions of the product and is deployed through Ops Manager, and due to RabbitMQ product limitations may require the cluster to be taken offline.  When this is necessary it is clearly noted in the release notes for that version.
 
-The upgrade paths are detailed [here](http://docs.pivotal.io/rabbitmq-cf/index.html) for each released version.
+Note there is a difference between the cluster remaining available during a tile upgrade/update, and an individual queue placed on nodes in a cluster.
 
-<p class="note"><strong>Note</strong>: For specific information about updating RabbitMQ for PCF from v1.6.0–v1.6.4, see <a href="./updating.html">Updating RabbitMQ for PCF from versions v1.6.x to v1.6.6</a>.</p>
+A reference guide for deployments is shown the table below.  Please be aware that this is a guide only and that the release notes for the version you are updating to must be checked before upgrading.
+
+<table border="1" class="nice">
+<tr>
+  <th>Operations Manager Action</th>
+  <th>Will Downtime Be Required For This Upgrade / Update </th>
+</tr>
+<tr>
+  <th>Major Tile Version Upgrade</th>
+  <td><ul>
+  <li>The RabbitMQ cluster will be taken offline for the duration of the upgrade</li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <th>Minor Tile Version Upgrade</th>
+  <td><ul>
+  <li>The RabbitMQ cluster will be taken offline for the duration of the upgrade</li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <th>Patch Tile Version Upgrades</th>
+  <td><ul>
+  <li>Normally these are rolling deployments with each node being updated in turn.  In these cases the cluster will remain available but individual queues may be taken offline, as each node is restarted.  There are specific migration paths which will require downtime which will be identified in the release notes for that version. </li>
+    </ul>
+  </td>
+<tr>
+  <th>Stemcell Only - Patch Tile Version Upgrades</th>
+  <td><ul>
+  <li>Where the patch update is only a new stemcell version these are rolling deployments with each node bineg updated in turn.  In these cases the cluster will remain available but individual queues may be taken offline, as each node is restarted.
+  </li>
+  </ul>
+  </td>
+</tr>
+</table>
+
+
+
+The specific upgrade paths are detailed [here](http://docs.pivotal.io/rabbitmq-cf/index.html) for each released version.
+
+<p class="note"><strong>Note</strong>: For specific information about updating RabbitMQ for PCF from v1.6.0–v1.6.4,
+see <a href="http://docs.pivotal.io/rabbitmq-cf/1-6-6/updating.html">Updating RabbitMQ for PCF from versions v1.6.x to v1.6.6</a>.</p>
 
 To upgrade the product:
 

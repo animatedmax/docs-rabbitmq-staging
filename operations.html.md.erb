@@ -1,0 +1,66 @@
+---
+title: RabbitMQ&reg; for Pivotal Cloud Foundry
+owner: London Services
+---
+
+# Operation Tips
+
+## What should I check before doing deploying a new version of the tile?
+Ensure that all nodes in the cluster are healthy via the RabbitMQ Management UI, or health metrics exposed via the firehose.  You cannot rely solely
+on the `bosh instances` output as that reflects the state of the Erlang VM used by RabbitMQ and not
+the RabbitMQ application.
+
+
+## What is the correct way to stop and start RabbitMQ in PCF?
+Only BOSH commands should be used by the operator to interact with the RabbitMQ application. For example:
+
+`bosh stop rabbitmq-server`
+
+`bosh start rabbitmq-server`
+
+There are BOSH job lifecycle hooks which are only fired when rabbitmq-server is
+stopped through BOSH.  You can also stop individual instances by running:
+
+`bosh stop JOB [index]`
+
+
+The ability to stop RabbitMQ via monit has been removed and running the command will just stop `monit` from monitoring this process.  `monit start` will still behave as expected.
+
+*Note* `monit stop rabbitmq-server` is now a no-op.
+
+## What happens when I run bosh stop rabbitmq-server?
+BOSH starts the shutdown sequence from the bootstrap instance.
+
+We start by telling the RabbitMQ application to shutdown and then shutdown the
+Erlang VM within which it is running. If this succeeds, we run the following
+checks to ensure that the RabbitMQ application and Erlang VM have stopped:
+
+1. If `/var/vcap/sys/run/rabbitmq-server/pid` exists, check that the PID inside
+this file does not point to a running Erlang VM process. Notice that we are
+tracking the Erlang PID and not the RabbitMQ PID.
+1. Check that `rabbitmqctl` does not return an Erlang VM PID
+
+Once this completes on the bootstrap instance, BOSH will continue the same
+sequence on the next instance. All remaining rabbitmq-server instances will be
+stopped one by one.
+
+## What happens when bosh stop rabbitmq-server fails?
+If the `bosh stop` fails, you will likely get an error saying that the drain
+script failed with:
+
+```
+result: 1 of 1 drain scripts failed. Failed Jobs: rabbitmq-server.
+```
+
+## What do I do when bosh stop rabbitmq-server fails?
+The drain script logs to `/var/vcap/sys/log/rabbtimq-server/drain.log`. If you
+have a remote syslog configured, this will appear as the `rmq_server_drain`
+program.
+
+First, `bosh ssh` into the failing rabbitmq-server instance and start the
+rabbimtq-server job by running `monit start rabbitmq-server`). You will not be
+able to start the job via `bosh start` as this always runs the drain script first
+and will fail since the drain script is failing. Once rabbitmq-server job is
+running (confirm this via `monit status`), run `DEBUG=1`
+`/var/vcap/jobs/rabbitmq-server/bin/drain`. This will tell you exactly why it’s
+failing.
