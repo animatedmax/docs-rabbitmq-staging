@@ -7,8 +7,7 @@ owner: London Services
 
 ## What should I check before deploying a new version of the tile?
 Ensure that all nodes in the cluster are healthy via the RabbitMQ Management UI, or health metrics exposed via the firehose.  You cannot rely solely
-on the `bosh instances` output as that reflects the state of the Erlang VM used by RabbitMQ and not
-the RabbitMQ application.
+on the `bosh instances` output as that reflects the state of the Erlang VM used by RabbitMQ and not the RabbitMQ application.
 
 
 ## What is the correct way to stop and start RabbitMQ in PCF?
@@ -23,9 +22,9 @@ stopped through BOSH.  You can also stop individual instances by running:
 
 `bosh stop JOB [index]`
 
-*Note* Do not use `monit stop rabbitmq-server` as this does not call the drain scripts
+<p class='note'><strong>Note</strong>: Do not use <code>monit stop rabbitmq-server</code> as this does not call the drain scripts.</p>
 
-## What happens when I run bosh stop rabbitmq-server?
+## What happens when I run "bosh stop rabbitmq-server"?
 BOSH starts the shutdown sequence from the bootstrap instance.
 
 We start by telling the RabbitMQ application to shutdown and then shutdown the
@@ -41,7 +40,7 @@ Once this completes on the bootstrap instance, BOSH will continue the same
 sequence on the next instance. All remaining rabbitmq-server instances will be
 stopped one by one.
 
-## What happens when bosh stop rabbitmq-server fails?
+## What happens when "bosh stop rabbitmq-server" fails?
 If the `bosh stop` fails, you will likely get an error saying that the drain
 script failed with:
 
@@ -49,7 +48,7 @@ script failed with:
 result: 1 of 1 drain scripts failed. Failed Jobs: rabbitmq-server.
 ```
 
-## What do I do when bosh stop rabbitmq-server fails?
+## What do I do when "bosh stop rabbitmq-server" fails?
 The drain script logs to `/var/vcap/sys/log/rabbtimq-server/drain.log`. If you
 have a remote syslog configured, this will appear as the `rmq_server_drain`
 program.
