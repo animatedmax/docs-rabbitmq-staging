@@ -59,6 +59,6 @@ rabbimtq-server job by running `monit start rabbitmq-server`). You will not be
 able to start the job via `bosh start` as this always runs the drain script first
 and will fail since the drain script is failing.
 
-Once rabbitmq-server job is running (confirm this via `monit status`), run `DEBUG=1`
-`/var/vcap/jobs/rabbitmq-server/bin/drain`. This will tell you exactly why it’s
+Once the `rabbitmq-server` job is running, which you can confirm via `monit status`, run `DEBUG=1`
+`/var/vcap/jobs/rabbitmq-server/bin/drain`. This tells you exactly why it is
 failing.
