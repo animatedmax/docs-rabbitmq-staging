@@ -27,5 +27,40 @@ that a new cluster can be created and decicated to a single application
 ### Stemcell deployments
 ### RabbitMQ updates
 
+
+## Entries in the VCAP_SERVICES Environment Variable
+Applications running in Cloud Foundry gain access to the bound service instances via an environment variable credentials hash called `VCAP_SERVICES`. An example hash is show below:
+
+<pre><code>
+{
+    "p-rabbitmq": [{
+        "credentials": {
+            "dashboard_url": "http://pivotal-rabbitmq.your.pcf.example.com/#/login/b5d0ad14-4352-48e8-8982-d5b1d257029f/tavk86pnnns1ddiqpsdtbchurn",
+            "username": "b5d0ad14-4352-48e8-8982-d5b1d257029f",
+            "password": "tavk86pnnns1ddiqpsdtbchurn",
+            "protocols": {
+                "amqp": {
+                    "password": "tavk86pnnns1ddiqpsdtbchurn",
+                    "username": "b5d0ad14-4352-48e8-8982-d5b1d257029f",
+                    "uris": [
+                        "amqp://b5d0ad14-4352-48e8-8982-d5b1d257029f:tavk86pnnns1ddiqpsdtbchurn@10.0.0.41:5672/62e5ab21-7b38-44ac-b139-6aa97af01cd7",
+                        "amqp://b5d0ad14-4352-48e8-8982-d5b1d257029f:tavk86pnnns1ddiqpsdtbchurn@10.0.0.51:5672/62e5ab21-7b38-44ac-b139-6aa97af01cd7"
+                    ]
+                }
+            }
+        }
+    }]
+}
+</code></pre>
+
+The `credentials` property can be used as follows:
+
+* The top level properties `username`, `password` provide access to the AMQP 0.9.1 protocol.
+
+* A more flexible approach is provided by the `credentials.protocols` property, which has a key per enabled protocol. The possible key is `amqp`.
+
+* The values associated with each of these keys gives access credentials specific to each protocol. In all cases, URIs are provided, along with the individual components.
+
+
 ## How to provision a dedicated instance as an App Developer
 
